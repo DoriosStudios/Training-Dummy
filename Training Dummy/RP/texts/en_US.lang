@@ -1,0 +1,3 @@
+tile.dorios:dummy_block.name=Dummy
+item.spawn_egg.entity.dorios:dummy.name=Spawn Dummy
+entity.dorios:dummy.name=Dummy

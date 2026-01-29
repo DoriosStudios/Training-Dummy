@@ -1,0 +1,10 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"dorios:dummy_block": {
+		"sound": "stone"
+	}
+}
