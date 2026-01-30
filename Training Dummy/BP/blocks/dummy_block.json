@@ -9,6 +9,9 @@
 						"minecraft:cardinal_direction"
 					]
 				}
+			},
+			"menu_category": {
+				"category": "construction"
 			}
 		},
 		"permutations": [
