@@ -1,17 +1,10 @@
 {
 	"format_version": 2,
 	"metadata": {
+		"product_type": "addon",
 		"authors": [
 			"Dorios Craft Studios"
-		],
-		"generated_with": {
-			"bridge": [
-				"2.7.54"
-			],
-			"dash": [
-				"0.11.7"
-			]
-		}
+		]
 	},
 	"header": {
 		"name": "Training Dummy",

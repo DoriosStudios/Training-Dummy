@@ -31,10 +31,14 @@ function summonDamage(entity, damage) {
     const dim = entity.dimension;
     const loc = entity.location;
 
+    // Ángulo y radio aleatorios
+    const angle = Math.random() * Math.PI * 2;
+    const radius = 0.5 + Math.random() * 0.5; // MÁS LEJOS
+
     const spawnLoc = {
-        x: loc.x + (Math.random() - 0.5) * 0.6,
-        y: loc.y + Math.random() * 0.4,
-        z: loc.z + (Math.random() - 0.5) * 0.6
+        x: loc.x + Math.cos(angle) * radius,
+        y: loc.y + 0.4 + Math.random() * 0.4,
+        z: loc.z + Math.sin(angle) * radius
     };
 
     const dmgEntity = dim.spawnEntity("dorios:damage", spawnLoc);
@@ -56,12 +60,12 @@ function summonDamage(entity, damage) {
         if (ticks > 12) fadeColor = "§7";
         if (ticks > 16) fadeColor = "§8";
 
-        dmgEntity.nameTag = `${fadeColor}-${damage}`;
+        dmgEntity.nameTag = `${fadeColor}${damage}:heart:`;
 
         dmgEntity.applyImpulse({
-            x: (Math.random() - 0.5) * 0.002,
+            x: (Math.random() - 0.5) * 0.003,
             y: 0.015,
-            z: (Math.random() - 0.5) * 0.002
+            z: (Math.random() - 0.5) * 0.003
         });
 
         ticks++;
@@ -71,6 +75,7 @@ function summonDamage(entity, damage) {
         }
     }, 1);
 }
+
 
 // ─────────────────────────────────────────────
 // Registro de daño
