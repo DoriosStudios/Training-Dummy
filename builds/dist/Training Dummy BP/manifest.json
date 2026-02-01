@@ -1,0 +1,64 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"product_type": "addon",
+		"authors": [
+			"Dorios Craft Studios"
+		]
+	},
+	"header": {
+		"name": "Training Dummy",
+		"description": "Version 1.1 With this addon you can see you DPS and DMG!",
+		"min_engine_version": [
+			1,
+			21,
+			120
+		],
+		"uuid": "6d51ec4e-e3d4-4c1c-a5d8-894ad10831fd",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "63d1e6b9-b62b-44d9-ad5c-213843ece0bb",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "df0170de-2e35-459e-b36d-4cdb0bdb708f",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "faf707f3-597f-4e19-8deb-efbffca976eb",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.4.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "2.0.0"
+		}
+	]
+}

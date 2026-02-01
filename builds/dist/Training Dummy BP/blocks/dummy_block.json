@@ -1,0 +1,92 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "dorios:dummy_block",
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			},
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state ('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state ('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state ('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state ('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							-90,
+							0
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:geometry": "geometry.dummy_block",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "dorios_dummy_block",
+					"render_method": "alpha_test"
+				}
+			},
+			"dorios:dummy_base": {},
+			"minecraft:collision_box": {
+				"size": [
+					16,
+					2,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"size": [
+					16,
+					2,
+					16
+				]
+			}
+		}
+	}
+}

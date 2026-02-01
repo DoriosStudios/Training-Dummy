@@ -1,0 +1,45 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"product_type": "addon",
+		"authors": [
+			"Dorios Craft Studios"
+		]
+	},
+	"header": {
+		"name": "Training Dummy",
+		"description": "Version 1.1 With this addon you can see you DPS and DMG!",
+		"min_engine_version": [
+			1,
+			21,
+			120
+		],
+		"uuid": "faf707f3-597f-4e19-8deb-efbffca976eb",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "20aa0538-d496-4b4e-b96a-e938c8831c5c",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "6d51ec4e-e3d4-4c1c-a5d8-894ad10831fd",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}
