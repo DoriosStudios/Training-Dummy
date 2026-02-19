@@ -11,8 +11,8 @@
 		"description": "Version 1.1 With this addon you can see you DPS and DMG!",
 		"min_engine_version": [
 			1,
-			21,
-			120
+			20,
+			0
 		],
 		"uuid": "faf707f3-597f-4e19-8deb-efbffca976eb",
 		"version": [
