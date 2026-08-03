@@ -1,0 +1,18 @@
+{
+  "blocks": [
+    {
+      "name": "dummy_base",
+      "model": "../../RP/models/blocks/dummy_block.geo.json",
+      "geometry": "geometry.dummy_block",
+      "textures": "../../RP/textures/blocks/dummy.png",
+      "position": [0, 0, 0]
+    },
+    {
+      "name": "dummy_entity",
+      "model": "../../RP/models/entity/dummy.geo.json",
+      "geometry": "geometry.dummy",
+      "textures": "../../RP/textures/entity/dummy.png",
+      "position": [0, 0.125, 0]
+    }
+  ]
+}
