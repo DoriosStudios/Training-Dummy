@@ -17,3 +17,7 @@ packs/
 # Specific File Types | Tipos de archivo específicos
 *.log
 *.txt
+build
+artifacts
+.regolith
+node_modules

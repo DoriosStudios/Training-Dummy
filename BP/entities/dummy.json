@@ -45,6 +45,10 @@
 						"event": "dorios:despawn"
 					}
 				]
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": false
 			}
 		},
 		"events": {

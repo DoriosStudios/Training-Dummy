@@ -1,5 +1,5 @@
-import 'dummy_block'
-import 'damage_number'
+import './dummyBlock.js'
+import './damageNumber.js'
 
 import { world, system } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";

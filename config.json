@@ -1,44 +1,130 @@
 {
-	"type": "minecraftBedrock",
-	"name": "Training Dummy",
-	"namespace": "dorios",
-	"authors": [
-		"Dorios Craft Studios"
-	],
-	"targetVersion": "1.21.130",
-	"description": "Version 1.1 With this addon you can see you DPS and DMG!",
-	"experimentalGameplay": {
-		"upcomingCreatorFeatures": false,
-		"experimentalCreatorCameraFeatures": false,
-		"enableGameTestFramework": false,
-		"renderDragonFeatures": false,
-		"educationEdition": false
-	},
-	"bdsProject": true,
-	"packs": {
-		"behaviorPack": "./BP",
-		"resourcePack": "./RP"
-	},
-	"worlds": [
-		"./worlds/*"
-	],
-	"compiler": {
-		"plugins": [
-			"generatorScripts",
-			"typeScript",
-			"entityIdentifierAlias",
-			"customEntityComponents",
-			"customItemComponents",
-			"customBlockComponents",
-			"customCommands",
-			"moLang",
-			"formatVersionCorrection",
-			[
-				"simpleRewrite",
-				{
-					"packName": "Training Dummy"
-				}
-			]
-		]
-	}
+  "$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/unified.json",
+  "type": "minecraftBedrock",
+  "author": "Dorios Craft Studios",
+  "name": "Training Dummy",
+  "namespace": "dorios",
+  "authors": ["Dorios Craft Studios"],
+  "targetVersion": "1.21.130",
+  "description": "Version 1.1 With this addon you can see you DPS and DMG!",
+  "experimentalGameplay": {
+    "upcomingCreatorFeatures": false,
+    "experimentalCreatorCameraFeatures": false,
+    "enableGameTestFramework": false,
+    "renderDragonFeatures": false,
+    "educationEdition": false
+  },
+  "bdsProject": true,
+  "packs": {
+    "behaviorPack": "./BP",
+    "resourcePack": "./RP"
+  },
+  "worlds": ["./worlds/*"],
+  "compiler": {
+    "plugins": [
+      "generatorScripts",
+      "typeScript",
+      "entityIdentifierAlias",
+      "customEntityComponents",
+      "customItemComponents",
+      "customBlockComponents",
+      "customCommands",
+      "moLang",
+      "formatVersionCorrection",
+      [
+        "simpleRewrite",
+        {
+          "packName": "Training Dummy"
+        }
+      ]
+    ]
+  },
+  "regolith": {
+    "dataPath": "./data",
+    "filterDefinitions": {
+      "bundle_scripts": {
+        "runWith": "shell",
+        "command": "npx esbuild BP/scripts/main.js --outfile=BP/scripts/__bundle.js --bundle --format=esm --target=es2020 --log-level=warning --alias:Config=./BP/scripts/Config --alias:config=./BP/scripts/config --alias:doriosAPI=./BP/scripts/doriosAPI --alias:DoriosAPI=./BP/scripts/DoriosAPI --alias:DoriosCore=./BP/scripts/DoriosCore --alias:Machinery=./BP/scripts/Machinery --alias:machinery=./BP/scripts/machinery --alias:blocks=./BP/scripts/blocks --alias:items=./BP/scripts/items --alias:stack_refill.js=./BP/scripts/stack_refill.js --alias:UIItemsCleanUp.js=./BP/scripts/UIItemsCleanUp.js --external:@minecraft/server --external:@minecraft/server-ui --external:@minecraft/server-* --external:@minecraft/common --external:@minecraft/debug-utilities --preserve-symlinks"
+      },
+      "minify_bundle_scripts": {
+        "runWith": "shell",
+        "command": "npx esbuild BP/scripts/main.js --outfile=BP/scripts/__bundle.js --bundle --format=esm --target=es2020 --minify --legal-comments=none --log-level=warning --alias:Config=./BP/scripts/Config --alias:config=./BP/scripts/config --alias:doriosAPI=./BP/scripts/doriosAPI --alias:DoriosAPI=./BP/scripts/DoriosAPI --alias:DoriosCore=./BP/scripts/DoriosCore --alias:Machinery=./BP/scripts/Machinery --alias:machinery=./BP/scripts/machinery --alias:blocks=./BP/scripts/blocks --alias:items=./BP/scripts/items --alias:stack_refill.js=./BP/scripts/stack_refill.js --alias:UIItemsCleanUp.js=./BP/scripts/UIItemsCleanUp.js --external:@minecraft/server --external:@minecraft/server-ui --external:@minecraft/server-* --external:@minecraft/common --external:@minecraft/debug-utilities --preserve-symlinks"
+      },
+      "use_bundle_entry": {
+        "runWith": "shell",
+        "command": "node -e \"const fs=require(\u0027fs\u0027); const p=\u0027BP/manifest.json\u0027; const m=JSON.parse(fs.readFileSync(p,\u0027utf8\u0027)); const script=m.modules.find(module=\u003emodule.type===\u0027script\u0027); if(script) script.entry=\u0027scripts/__bundle.js\u0027; fs.writeFileSync(p, JSON.stringify(m,null,\u0027\\t\u0027));\""
+      },
+      "cleanup_bundled_scripts": {
+        "runWith": "shell",
+        "command": "node -e \"const fs=require(\u0027fs\u0027); fs.renameSync(\u0027BP/scripts/__bundle.js\u0027,\u0027BP/__bundle.js\u0027); fs.rmSync(\u0027BP/scripts\u0027,{recursive:true,force:true}); fs.mkdirSync(\u0027BP/scripts\u0027,{recursive:true}); fs.renameSync(\u0027BP/__bundle.js\u0027,\u0027BP/scripts/__bundle.js\u0027);\""
+      }
+    },
+    "formatVersion": "1.8.0",
+    "profiles": {
+      "default": {
+        "export": {
+          "build": "standard",
+          "readOnly": false,
+          "target": "development"
+        },
+        "filters": []
+      },
+      "bundle": {
+        "export": {
+          "build": "standard",
+          "readOnly": false,
+          "target": "development"
+        },
+        "filters": [
+          { "filter": "bundle_scripts" },
+          { "filter": "use_bundle_entry" },
+          { "filter": "cleanup_bundled_scripts" }
+        ]
+      },
+      "minify": {
+        "export": {
+          "build": "standard",
+          "readOnly": false,
+          "target": "development"
+        },
+        "filters": [
+          { "filter": "minify_bundle_scripts" },
+          { "filter": "use_bundle_entry" },
+          { "filter": "cleanup_bundled_scripts" }
+        ]
+      },
+      "build": {
+        "export": {
+          "bpName": "project.name + \u0027 BP\u0027",
+          "rpName": "project.name + \u0027 RP\u0027",
+          "target": "local"
+        },
+        "filters": [
+          { "filter": "bundle_scripts" },
+          { "filter": "use_bundle_entry" },
+          { "filter": "cleanup_bundled_scripts" }
+        ]
+      },
+      "buildDev": {
+        "export": {
+          "bpName": "project.name + \u0027 BP\u0027",
+          "rpName": "project.name + \u0027 RP\u0027",
+          "target": "local"
+        },
+        "filters": []
+      },
+      "buildMinify": {
+        "export": {
+          "bpName": "project.name + \u0027 BP\u0027",
+          "rpName": "project.name + \u0027 RP\u0027",
+          "target": "local"
+        },
+        "filters": [
+          { "filter": "minify_bundle_scripts" },
+          { "filter": "use_bundle_entry" },
+          { "filter": "cleanup_bundled_scripts" }
+        ]
+      }
+    }
+  }
 }

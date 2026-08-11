@@ -1,5 +1,5 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.120",
 	"minecraft:block": {
 		"description": {
 			"identifier": "dorios:dummy_block",
@@ -70,6 +70,15 @@
 				"*": {
 					"texture": "dorios_dummy_block",
 					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:item_visual": {
+				"geometry": "geometry.dummy_block_item",
+				"material_instances": {
+					"*": {
+						"texture": "dorios_dummy_block",
+						"render_method": "alpha_test"
+					}
 				}
 			},
 			"dorios:dummy_base": {},
