@@ -1,0 +1,46 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DoriosStudios/Dorios-Workflows/v1.0.2/releases/schemas/project.schema.json",
+  "schemaVersion": 1,
+  "project": {
+    "name": "Training Dummy",
+    "slug": "dummy"
+  },
+  "release": {
+    "changelogPath": "CHANGELOG.md",
+    "defaultChannel": "stable",
+    "bedrockManifestPaths": [
+      "BP/manifest.json",
+      "RP/manifest.json"
+    ]
+  },
+  "build": {
+    "enabled": true,
+    "type": "regolith",
+    "developmentProfile": "buildDev",
+    "releaseProfile": "buildMinify",
+    "outputDirectory": "build",
+    "packDirectories": [
+      "Training Dummy BP",
+      "Training Dummy RP"
+    ]
+  },
+  "distribution": {
+    "github": true,
+    "curseforge": {
+      "enabled": true,
+      "projectId": 1095457,
+      "gameVersion": "26.30"
+    }
+  },
+  "links": {
+    "website": "https://doriosstudios.com/projects/dummy/",
+    "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/training-dummy",
+    "mcpedl": "https://mcpedl.com/training-dummy/"
+  },
+  "announcement": {
+    "enabled": true,
+    "color": "B0D070",
+    "imageUrl": "https://doriosstudios.com/img/addons/dummy/MCPEDL.png",
+    "automaticDelayMinutes": 60
+  }
+}
