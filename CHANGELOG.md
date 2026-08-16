@@ -1,3 +1,18 @@
+# Training Dummy v1.1.1
+
+This update removes an unintended development interaction from the Training Dummy.
+
+## HIGHLIGHTS
+
+- Removed the development-only stick interaction that generated configurable islands.
+
+## FIXED
+
+- Removed the development-only stick interaction that generated configurable islands.
+- Synchronized the visible pack version metadata with v1.1.1.
+
+---
+
 # Training Dummy v1.1.0
 
 This update adds a complete visual model and a clearer, always-visible global DPS display to the Training Dummy.
